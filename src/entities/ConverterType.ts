@@ -1,0 +1,18 @@
+export const converterType: { [key: string]: string } = {
+    'Decimal-Decimal': 'Decimal To Decimal Converter',
+    'Decimal-Binary': 'Decimal To Binary Converter',
+    'Decimal-Octal': 'Decimal To Octal Converter',
+    'Decimal-Hexadecimal': 'Decimal To Hexadecimal Converter',
+    'Binary-Binary': 'Binary To Binary Converter',
+    'Binary-Decimal': 'Binary To Decimal Converter',
+    'Binary-Octal': 'Binary To Octal Converter',
+    'Binary-Hexadecimal': 'Binary To Hexadecimal Converter',
+    'Octal-Octal': 'Octal To Octal Converter',
+    'Octal-Decimal': 'Octal To Decimal Converter',
+    'Octal-Binary': 'Octal To Binary Converter',
+    'Octal-Hexadecimal': 'Octal To Hexadecimal Converter',
+    'Hexadecimal-Hexadecimal': 'Hexadecimal To Hexadecimal Converter',
+    'Hexadecimal-Decimal': 'Hexadecimal To Decimal Converter',
+    'Hexadecimal-Binary': 'Hexadecimal To Decimal Converter',
+    'Hexadecimal-Octal': 'Hexadecimal To Octal Converter',
+};
