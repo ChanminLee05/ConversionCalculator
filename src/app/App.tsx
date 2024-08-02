@@ -1,24 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Converter from "../pages/Converter";
+import {converterType} from "../entities/ConverterType";
+
+const title = document.getElementById("title");
+const fromOption = document.getElementById("from-option");
+const toOption = document.getElementById("to-option");
+const input = document.getElementById("input");
+const convertBtn = document.getElementById("convert-btn");
+const resetBtn = document.getElementById("reset-btn");
+const swapBtn = document.getElementById("swap-btn");
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Converter />
     </div>
   );
 }

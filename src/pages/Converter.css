@@ -1,0 +1,74 @@
+.calculator-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5vw 20vw;
+    cursor: default;
+}
+
+#converter-form {
+    display: flex;
+    flex-direction: column;
+    background-color: beige;
+    border-radius: 10px;
+    padding: 1vw 5vw;
+}
+
+/*Option-section*/
+.option-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5vw;
+}
+.from-option-container, .to-option-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.option-label {
+    font-size: 1vw;
+    margin-bottom: 10px;
+}
+.option-txt {
+    font-size: 1vw;
+    width: 15vw;
+    height: 2vw;
+}
+
+/*Input-section*/
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.input-container p {
+    font-size: 1vw;
+}
+#input {
+    height: 2vw;
+    font-size: 1vw;
+    width: 99%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2vw;
+    margin: 2vw;
+}
+
+.btn {
+    border-radius: 5px;
+    font-size: 1.5vw;
+    padding: 5px 10px;
+    background-color: rgb(173, 173, 168);
+    cursor: pointer;
+}
+#convert-btn {
+    background-color: rgb(215, 198, 57);
+}
