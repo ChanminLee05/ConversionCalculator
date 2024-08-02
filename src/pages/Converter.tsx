@@ -2,8 +2,8 @@ import React, {useEffect, useRef, useState} from 'react';
 import "./Converter.css";
 import {changeTitle} from "../features/ChangeTitle";
 import {handleReset} from "../features/Reset";
-import {calculator} from "../features/Calculator/Calculator";
 import {handleSwap} from "../features/Swap";
+import {convert} from "../features/Convert";
 
 const Converter: React.FC = () => {
     const [fromOption, setFromOption] = useState<string>('Decimal');
@@ -18,22 +18,17 @@ const Converter: React.FC = () => {
         setInput(String(e.target.value));
     }
 
+    const handleConvert = (e: React.MouseEvent<HTMLButtonElement>) => {
+        if (input) {
+            convert(e, input, fromOption, toOption, resultRef, setResult);
+        } else {
+            alert("Please provide a valid input.");
+        }
+    }
+
     useEffect(() => {
         changeTitle(fromOption, toOption, titleRef);
     },[fromOption, toOption])
-
-    const convert = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        if (input !== undefined && resultRef.current) {
-            const type = `${fromOption}-${toOption}`;
-            calculator(type, input, resultRef.current);
-            setResult(resultRef.current.innerText);
-        }
-
-        if (fromOption === toOption) {
-            alert("Please select different conversion type");
-        }
-    }
 
     return (
         <div className="calculator-page">
@@ -75,9 +70,9 @@ const Converter: React.FC = () => {
                            onChange={handleInputChange}></input>
                 </div>
                 <div className="button-container">
-                    <button type="submit" id="convert-btn" className="btn" onClick={convert}>Convert</button>
-                    <button type="button" id="reset-btn" className="btn" onClick={() => handleReset(setInput, setResult)}>Reset</button>
-                    <button type="button" id="swap-btn" className="btn" onClick={() => handleSwap(setFromOption, setToOption, setInput, setResult)}>Swap</button>
+                    <button type="submit" id="convert-btn" className="btn" onClick={handleConvert}><i className="fa-solid fa-play"></i>Convert</button>
+                    <button type="button" id="reset-btn" className="btn" onClick={() => handleReset(setInput, setResult)}><i className="fa-solid fa-rotate-left"></i>Reset</button>
+                    <button type="button" id="swap-btn" className="btn" onClick={() => handleSwap(setFromOption, setToOption, setInput, setResult)}><i className="fa-solid fa-right-left"></i>Swap</button>
                 </div>
                 <div className="result">
                     <p>{toOption} Number: <span ref={resultRef}>{result}</span></p>

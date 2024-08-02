@@ -1,18 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Lilita+One&display=swap');
+
+body {
+    background: url("/src/assets/background.jpg") no-repeat;
+    background-size: cover;
+    position: relative;
+}
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(206, 208, 210, 0.1);
+}
 .calculator-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 5vw 20vw;
     cursor: default;
 }
-
+#title {
+    margin-top: 5vw;
+    font-size: 3vw;
+    color: #efebe8;
+}
 #converter-form {
     display: flex;
     flex-direction: column;
     background-color: beige;
     border-radius: 10px;
-    padding: 1vw 5vw;
+    padding: 3vw 5vw;
+    z-index: 10;
 }
 
 /*Option-section*/
@@ -20,7 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 5vw;
+    column-gap: 6vw;
 }
 .from-option-container, .to-option-container {
     display: flex;
@@ -29,7 +47,7 @@
     align-items: start;
 }
 .option-label {
-    font-size: 1vw;
+    font-size: 1.2vw;
     margin-bottom: 10px;
 }
 .option-txt {
@@ -44,16 +62,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    margin-left: 0.5vw;
 }
 .input-container p {
-    font-size: 1vw;
+    font-size: 1.2vw;
 }
 #input {
     height: 2vw;
     font-size: 1vw;
-    width: 99%;
+    width: 97%;
 }
 
+/*Button-section*/
 .button-container {
     display: flex;
     justify-content: center;
@@ -61,14 +81,30 @@
     column-gap: 2vw;
     margin: 2vw;
 }
-
+.button-container i {
+    margin-right: 5px;
+}
 .btn {
     border-radius: 5px;
     font-size: 1.5vw;
-    padding: 5px 10px;
+    padding: 5px 15px;
     background-color: rgb(173, 173, 168);
     cursor: pointer;
 }
 #convert-btn {
     background-color: rgb(215, 198, 57);
+    margin: 2vw 0;
+}
+
+/*Result-section*/
+.result {
+    width: 37vw;
+}
+.result p {
+    font-size: 1.7vw;
+    font-family: "Lilita One", sans-serif;
+}
+.result span {
+    font-size: 1.7vw;
+    margin-left: 2vw;
 }
